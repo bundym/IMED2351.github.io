@@ -11,9 +11,12 @@ const planet = {
   water: "no water"
 };
 
-console.log("About Planet: " + planet.color + ", " + 
-  planet.life + ", " + planet.age + ", " + 
-  planet.water + ".");
+let population = Math.floor(Math.random() * 100e6);
+console.log("Population is " + population)
+
+console.log("About Planet: " + planet.color + ", "
+  + planet.life + ", " + planet.age + ", "
+  + planet.water + ".");
 
 const date = {
   day: "3rd",
