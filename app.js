@@ -1,29 +1,30 @@
-var health = 100; // this is the full health status
-
-let  x = 100;
-const y = 25;
-
-{  
-  let x = 50; // this is block variable
+function showMessage(text1, text2, text3,) {
+  console.log("Hello " + text1 + text2 + text3);
 }
 
-let z = x * y;
+showMessage("Omicron ", "Persei ", 8);
 
-const firstName = "Bundy"; // string variable
+const planet = {
+  color: "greenish color",
+  life: " has life",
+  age: "500 million years old",
+  water: "no water"
+};
 
-const car = {type:"BMW", model:"M3", color:"white"}; // obejct variable using const
+console.log("About Planet: " + planet.color + ", " + 
+  planet.life + ", " + planet.age + ", " + 
+  planet.water + ".");
 
-// Add a property:
-car.owner = "Manriquez";
+const date = {
+  day: "3rd",
+  month: "February",
+  year: 5566,
+  fullDate: function() {
+    return "Year:" + this.year + ", " + this.day + " " + this.month;
+  }
+};
 
-// Display the property:
+console.log(date.fullDate());
 
-
-
-
-
-
-
-
-console.log(health + x + z + " " + firstName );
-console.log("Car type and model is " + car.type + " " + car.model + " and owner is " + firstName + " " + car.owner);
+const number = Math.floor(Math.random() * 100);
+console.log("Your current age is " + number);
