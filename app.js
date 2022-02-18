@@ -1,100 +1,91 @@
 const number = Math.floor(Math.random() * 110);
 console.log(`Your current age is ${number}`);
 
+//Start of assignment 5.1
 
 
+console.log("Every year on this planet is below");
 
+let hand = 33;
+for (hand = 1989; hand < 2023; ++hand) {
+  console.log(`${hand}`)
+}
 
-//Assignment 4.4
-
-//START OF ASSIGNMENT
-
-const firstName = "Bundy";
-
-const lastName = "Manriquez";
-
-const age = 32;
-
-const schoolYears = 3
-
-//string concatenation
-console.log(`Hello my name is ${firstName} ${lastName} and I am ${age} years old. ` +
- `I have been in school for ${schoolYears} years.`);
-
-
-//if conditional statement
-
-const dog1 = Math.floor(Math.random() * 20);;
-if(dog1 < 10) {
-  console.log('Your dog is still young!');
-} else if(dog1 < 3) {
-  console.log('Your dog is still a puppy!')
-} else{
-  console.log('Your dog is getting older...:(')
+let hand1 = 33;
+while (hand1 <= 33) {
+  console.log("Getting Older Now");
+  hand1++
 }
 
 
-//switch statement
-let month;
-switch (new Date().getMonth()) {
-  case 0:
-    month = "January is an alright month.";
-    break;
-  case 1:
-    month = "February is a cold month.";
-    break;
-  case 2:
-    month = "March is a fun month.";
-    break;
-  case 3:
-    month = "April is a nice month.";
-    break;
-  case 4:
-    month = "May is a hot month.";
-    break;
-  default:
-    month = "The other months are a blur";
+//While Loop
+
+let limit = 7;
+let shirts_ordered = 0;
+
+while (shirts_ordered < limit) {
+	shirts_ordered++;
+	let capacity = limit - shirts_ordered;
+	let message = capacity + " more shirts can be ordered.";
+	console.log(message);
 }
 
-console.log(month);
+
+//DOM
+
+const text = document.querySelector(".title");
+const changeColor= document.querySelector(".changeColor");
+
+changeColor.addEventListener("click", function() {
+  text.classList.toggle("change");
+})
 
 
-//String methods
+//Event Listener
 
-let gyms = "Planet Fitness, Gold's Gym, Lifetime Fitness";
-let currentGym = gyms.slice(0, 14);
-let otherGym = gyms.substr(16, 10);
-let lastGym = gyms.slice(-17);
+const userList = document.querySelector(".name-list");
+const listInput = document.querySelector(".list-input");
+const addListBtn = document.querySelector(".addListBtn");
 
-console.log(`The gym I go to is called ${currentGym}. I used to go` +
-  `to ${otherGym}. I have always wanted to go to ${lastGym}.`);
-
-let search = "I like to use Bing for my search engine. "
-let newSearch = search.replace("Bing", "Google");
-let search1 = "Bing is a very helpful tool, but there are others besides Bing."
-let newSearch1 = search1.replaceAll("Bing", "Google");
-
-console.log(newSearch + newSearch1);
+addListBtn.addEventListener('click', function() {
+  const newLi = document.createElement('LI');
+  const liContent = document.createTextNode(listInput.value);
+  newLi.appendChild(liContent);
+  userList.appendChild(newLi);
+  newLi.style.color = "Green";
+})
 
 
-//Number methods
+function upperCase() {
+  const x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
 
-const num1 = "   54897.32    ";
-const num2 = "476.43";
 
-let num3 = 6.666;
-const num4 = num3.toPrecision(1);
-//num1 and num2 and num4 will be added to sahow up in the console log.
+function myMove() {
+  let id = null;
+  const elem = document.getElementById("animate");   
+  let pos = 0;
+ clearInterval(id);
+  id = setInterval(frame, 1);
+  function frame() {
+    if (pos == 125) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
 
-const combinedDescr = 'The total is ';
-const newCombinedDescr = combinedDescr.toUpperCase();
+let root = document.documentElement;
 
-const combinedNum = Number(num1) + Number(num2) + Number(num4);
+root.addEventListener("mousemove", e => {
+  root.style.setProperty('--mouse-x', e.clientX + "px");
+  root.style.setProperty('--mouse-y', e.clientY + "px");
+});
 
-console.log(newCombinedDescr + combinedNum);
 
-const personAge = 32;
 
-const internetAge = (age < 16) ? "Too young":"Old enough";
 
-console.log(`${internetAge} to be on internet.`)

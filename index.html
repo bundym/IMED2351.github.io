@@ -4,17 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"/>
     <title>Document</title>
 </head>
 <body>
+    <h1 class="title">Hello!</h1>
+    <button class = "changeColor">Click me</button>
 
-    <h2>All my work will dispay in console log!</h2>
-    <p>Click the button to display the date on this planet.</p>
+</br>
+    
+    <ul class="name-list">
+        <li>Samsung</li>
+        <li>Microsoft</li>
+        <li>Apple</li>
+        <li>Sony</li>
+    </ul>
+    <button class="addListBtn">Add</button>
+    <input class ="list-input" type="text" />
+    <p>Add some more companies yourself.</p>
+</br>
+</br>
 
-    <button onclick="this.innerHTML=Date()">Time?</button>
+    Enter your name and click elsewhere to transform to upper case.: <input type="text" id="fname" onchange="upperCase()">
 
+    <h3 class = "change">My First JavaScript Animation</h3>
+    <div id ="container">
+        <div id ="animate"></div>
+      </div>
+    <p><button class="button" onclick="myMove()">Click Me</button></p>      
+    
+    <p id="demo"></p>
 
-
+      <div class="mover"></div>
 
     <script src="./app.js"></script>
 </body>
