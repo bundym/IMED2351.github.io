@@ -1,91 +1,54 @@
-const number = Math.floor(Math.random() * 110);
-console.log(`Your current age is ${number}`);
+//STart of assignment 6.4
 
-//Start of assignment 5.1
-
-
-console.log("Every year on this planet is below");
-
-let hand = 33;
-for (hand = 1989; hand < 2023; ++hand) {
-  console.log(`${hand}`)
-}
-
-let hand1 = 33;
-while (hand1 <= 33) {
-  console.log("Getting Older Now");
-  hand1++
-}
-
-
-//While Loop
-
-let limit = 7;
-let shirts_ordered = 0;
-
-while (shirts_ordered < limit) {
-	shirts_ordered++;
-	let capacity = limit - shirts_ordered;
-	let message = capacity + " more shirts can be ordered.";
-	console.log(message);
-}
-
-
-//DOM
-
-const text = document.querySelector(".title");
-const changeColor= document.querySelector(".changeColor");
-
-changeColor.addEventListener("click", function() {
-  text.classList.toggle("change");
-})
-
-
-//Event Listener
-
-const userList = document.querySelector(".name-list");
-const listInput = document.querySelector(".list-input");
-const addListBtn = document.querySelector(".addListBtn");
-
-addListBtn.addEventListener('click', function() {
-  const newLi = document.createElement('LI');
-  const liContent = document.createTextNode(listInput.value);
-  newLi.appendChild(liContent);
-  userList.appendChild(newLi);
-  newLi.style.color = "Green";
-})
-
-
-function upperCase() {
-  const x = document.getElementById("fname");
-  x.value = x.value.toUpperCase();
-}
-
-
-function myMove() {
-  let id = null;
-  const elem = document.getElementById("animate");   
-  let pos = 0;
- clearInterval(id);
-  id = setInterval(frame, 1);
-  function frame() {
-    if (pos == 125) {
-      clearInterval(id);
-    } else {
-      pos++; 
-      elem.style.top = pos + "px"; 
-      elem.style.left = pos + "px"; 
-    }
+//Object and Object method
+const newPerson = {
+  firstName : "Bundy",
+  lastName  : "Manriquez",
+  age : 32,
+  eyeColor  : "brown",
+  height : "6ft 1in",
+  gender : "male",
+  weight : "185 lbs",
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  },
+  measurements : function(){
+    return this.height + ", " + this.weight;
   }
-}
+};
 
-let root = document.documentElement;
+const d = new Date(89, 10, 13);
 
-root.addEventListener("mousemove", e => {
-  root.style.setProperty('--mouse-x', e.clientX + "px");
-  root.style.setProperty('--mouse-y', e.clientY + "px");
-});
+console.log(`I am ${newPerson.fullName()} and I am ${newPerson.age} years old.`+ 
+` My measurements are ${newPerson.measurements()}. I was born on ${d.toDateString()}.`);
+
+console.log(`My eyes are ${newPerson.eyeColor}.`);
 
 
 
+//Array and Array Method
+
+const characters = [
+  'Mario',
+  'Kirby',
+  'Link',
+  'Samus',
+  'Isabella'
+];
+
+const secondTier = [
+  'Incineroar',
+  'Pikachu',
+]
+
+characters.push('Captain Falcon');
+characters[characters.length] = 'Yoshi';
+console.log(characters.sort());
+
+
+document.getElementById("character").innerHTML = characters[2];
+
+const myCharacters = characters.concat(secondTier);
+
+console.log(`All characters I choose from are ${myCharacters}.`)
 
